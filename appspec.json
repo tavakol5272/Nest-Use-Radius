@@ -1,85 +1,77 @@
 {
+  "version": "1.2",
   "settings": [
-	{
-      "id": "radii",
-      "name": "Radii around nest/central location",
-      "description": "Insert the required radii (in metre) for which the usage proportions shall be calculated. Values must be positive. If you want more than one radius, enter them in descending order and seperate by comma. Example: 100,200,300,500. Defaults to 500.",
-      "defaultValue": "500",
+    {
+      "id": "sdk",
+      "name": "The name of the MoveApps SDK",
+      "description": "Showcase requesting a string input from the users of your app.",
+      "defaultValue": "MoveApps SDK",
       "type": "STRING"
     },
-	{
-      "id": "selName",
-      "name": "Object name with nest/centre locations",
-      "description": "Provide the name of the move object containing the table of nest/center location longitudes and laditudes (e.g. 'nesting' for output of Nest Detection App).",
-      "defaultValue": null,
-      "type": "STRING"
+    {
+      "id": "year",
+      "name": "The year",
+      "description": "Insert description for the year setting setting",
+      "defaultValue": 2022,
+      "type": "INTEGER"
     },
-	{
-      "id": "trackVar",
-      "name": "Track name variable",
-      "description": "Provide the name of the variable indicating the individual tracks to calculate the distances to the next to. This must overlap with tracks IDs of the data set that shall be filtered. Defaults to 'trackId'",
-      "defaultValue": "trackId",
-      "type": "STRING"
+    {
+      "id": "auxiliary-file-a",
+      "name": "Personalization",
+      "description": "You can personalize the app by providing a file",
+      "type": "USER_FILE"
     }
   ],
   "dependencies": {
     "R": [
       {
-        "name": "move"
+        "name": "lubridate"
       },
-	  {
-        "name": "foreach"
-      },
-	  {
-        "name": "geosphere"
-      },
-	  {
-        "name": "ggmap"
-      },
-	  {
-        "name": "ggplot2"
-      },
-	  {
-        "name": "sp"
-      },
-	  {
-        "name": "rgeos"
-      },
-	  {
-        "name": "fields"
-      },
-	  {
-        "name": "grid"
-      },
-	  {
-        "name": "gridExtra"
+      {
+        "remotes": "install_git('https://gitlab.com/bartk/move2.git')"
       }
     ]
   },
-  "createsArtifacts": true,
+  "providedAppFiles": [
+    {
+      "settingId": "auxiliary-file-a",
+      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
+    }
+  ],
   "license": {
     "key": "MIT"
   },
   "language": "eng",
   "keywords": [
-	"nest use",
-    "central location",
-	"center",
-	"radius"
+    "example",
+    "template"
   ],
   "people": [
     {
-      "firstName": "Andrea",
+      "firstName": "Charles",
       "middleInitials": null,
-      "lastName": "Kölzsch",
-      "email": "akoelzsch@ab.mpg.de",
-      "roles": ["compiler","author","creator"],
-      "orcid": "0000-0003-0193-1563",
-      "affiliation": "Max-Planck-Institute of Animal Behavior",
-      "affiliationRor": "https://ror.org/026stee22"
+      "lastName": "Darwin",
+      "email": "creator@example.com",
+      "roles": [
+        "author",
+        "creator"
+      ],
+      "orcid": null,
+      "affiliation": null,
+      "affiliationRor": null
     }
   ],
-  "documentation" : {
-    "url": "https://github.com/movestore/Nest-Use-Radius/blob/main/README.md"
-  }
+  "funding": [
+    {
+      "name": "funder name",
+      "comment": "grant for App"
+    }
+  ],
+  "references": [
+    {
+      "type": "IsDescribedBy",
+      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
+      "url": "https://anylink.xyz"
+    }
+  ]
 }
